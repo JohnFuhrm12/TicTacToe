@@ -1,10 +1,10 @@
 // Init
 
 let row1 = ['', '', ''];
-let row2 = ['', 'X', ''];
+let row2 = ['', '', ''];
 let row3 = ['', '', ''];
 
-let xTurn = false;
+let xTurn = true;
 
 const gameboard = [row1, row2, row3];
 
@@ -47,6 +47,13 @@ function loadBoard() {
         });
     };
 
+    const headline = document.getElementById('headline');
+
+    if (xTurn) {
+        headline.innerText = `Player 1's Turn`;
+    } else {
+        headline.innerText = `Player 2's Turn`;
+    };
 
 };
 
@@ -63,14 +70,109 @@ window.onload = function() {
     const square8 = document.getElementById('square8');
     const square9 = document.getElementById('square9');
 
-    const squares = [square1, square2, square3, square4, square5, square6, square7, square8, square9];
-
     square1.addEventListener('click', function() {
         if (row1[0] === '' && xTurn) {
             row1[0] = 'X';
+            xTurn = false;
         };
         if (row1[0] === '' && !xTurn) {
             row1[0] = 'O';
+            xTurn = true;
+        };
+        loadBoard();
+    });
+
+    square2.addEventListener('click', function() {
+        if (row1[1] === '' && xTurn) {
+            row1[1] = 'X';
+            xTurn = false;
+        };
+        if (row1[1] === '' && !xTurn) {
+            row1[1] = 'O';
+            xTurn = true;
+        };
+        loadBoard();
+    });
+
+    square3.addEventListener('click', function() {
+        if (row1[2] === '' && xTurn) {
+            row1[2] = 'X';
+            xTurn = false;
+        };
+        if (row1[2] === '' && !xTurn) {
+            row1[2] = 'O';
+            xTurn = true;
+        };
+        loadBoard();
+    });
+
+    square4.addEventListener('click', function() {
+        if (row2[0] === '' && xTurn) {
+            row2[0] = 'X';
+            xTurn = false;
+        };
+        if (row2[0] === '' && !xTurn) {
+            row2[0] = 'O';
+            xTurn = true;
+        };
+        loadBoard();
+    });
+
+    square5.addEventListener('click', function() {
+        if (row2[1] === '' && xTurn) {
+            row2[1] = 'X';
+            xTurn = false;
+        };
+        if (row2[1] === '' && !xTurn) {
+            row2[1] = 'O';
+            xTurn = true;
+        };
+        loadBoard();
+    });
+
+    square6.addEventListener('click', function() {
+        if (row2[2] === '' && xTurn) {
+            row2[2] = 'X';
+            xTurn = false;
+        };
+        if (row2[2] === '' && !xTurn) {
+            row2[2] = 'O';
+            xTurn = true;
+        };
+        loadBoard();
+    });
+
+    square7.addEventListener('click', function() {
+        if (row3[0] === '' && xTurn) {
+            row3[0] = 'X';
+            xTurn = false;
+        };
+        if (row3[0] === '' && !xTurn) {
+            row3[0] = 'O';
+            xTurn = true;
+        };
+        loadBoard();
+    });
+
+    square8.addEventListener('click', function() {
+        if (row3[1] === '' && xTurn) {
+            row3[1] = 'X';
+            xTurn = false;
+        };
+        if (row3[1] === '' && !xTurn) {
+            row3[1] = 'O';
+            xTurn = true;
+        };
+        loadBoard();
+    });
+
+    square9.addEventListener('click', function() {
+        if (row3[2] === '' && xTurn) {
+            row3[2] = 'X';
+            xTurn = false;
+        };
+        if (row3[2] === '' && !xTurn) {
+            row3[2] = 'O';
         };
         loadBoard();
     });
