@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    background-color: black;
+    align-items: center;
+}
+
+html, body {
+	max-height: 100%;
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+
+#navbar {
+    background-color: aqua;
+    border-bottom: solid 3px white;
+    text-align: left;
+}
