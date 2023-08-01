@@ -24,3 +24,32 @@ html, body {
     color: black;
     font-size: 40px;
 }
+
+#board {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-inline: 35%;
+    margin-top: 5%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    margin: 20px;
+    border: solid 4px black;
+    outline: solid 4px aqua;
+    transition: 0.5s;
+}
+
+.square:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: rgb(159, 159, 159);
+}
