@@ -16,3 +16,11 @@ html, body {
     border-bottom: solid 3px white;
     text-align: left;
 }
+
+#titleText {
+    margin-top: 0;
+    padding: 15px;
+    padding-bottom: 0px;
+    color: black;
+    font-size: 40px;
+}
