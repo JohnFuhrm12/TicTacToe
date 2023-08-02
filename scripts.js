@@ -125,6 +125,7 @@ function loadBoard() {
     };
 
     // Check for Win Conditions Diagnol
+    
     if (row1[0] === 'X' && row2[1] === 'X' && row3[2] === 'X') {
         endgame = true;
         xWins = true;
@@ -146,6 +147,7 @@ function loadBoard() {
     };
 
     // Check for Draw
+
     if (row1[0] !== '' && row1[1] !== '' && row1[2] !== '' && row2[0] !== '' && row2[1] !== '' && row2[2] !== '' && row3[0] !== '' && row3[1] !== '' && row3[2] !== '') {
         endgame = true;
     };
