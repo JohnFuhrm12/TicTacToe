@@ -302,6 +302,7 @@ window.onload = function() {
         };
         if (row3[2] === '' && !xTurn) {
             row3[2] = 'O';
+            xTurn = true;
         };
         loadBoard();
     });
