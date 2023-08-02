@@ -5,6 +5,7 @@ let row2 = ['', '', ''];
 let row3 = ['', '', ''];
 
 let xTurn = true;
+let endgame = false;
 
 const gameboard = [row1, row2, row3];
 
@@ -51,10 +52,16 @@ function loadBoard() {
 
     const headline = document.getElementById('headline');
 
-    if (xTurn) {
+    if (xTurn && !endGame) {
         headline.innerText = `Player 1's Turn`;
-    } else {
+    };
+
+    if (!xTurn && !endGame) {
         headline.innerText = `Player 2's Turn`;
+    };
+
+    if (endgame) {
+        headline.innerText = `Game Over`;
     };
 
     // Check for Win Conditions Horizontal
@@ -126,9 +133,28 @@ function loadBoard() {
 
     // Check for Draw
     if (row1[0] !== '' && row1[1] !== '' && row1[2] !== '' && row2[0] !== '' && row2[1] !== '' && row2[2] !== '' && row3[0] !== '' && row3[1] !== '' && row3[2] !== '') {
-        console.log('Draw');
-    }
+        endgame = true;
+    };
 
+    endGame();
+};
+
+// Endgame
+
+function endGame() {
+    if (endgame) {
+        endgame = false;
+        row1[0] = '';
+        row1[1] = '';
+        row1[2] = '';
+        row2[0] = '';
+        row2[1] = '';
+        row2[2] = '';
+        row3[0] = '';
+        row3[1] = '';
+        row3[2] = '';
+        loadBoard();
+    };
 };
 
 window.onload = function() {
