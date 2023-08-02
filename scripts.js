@@ -5,6 +5,8 @@ let row2 = ['', '', ''];
 let row3 = ['', '', ''];
 
 let xTurn = true;
+let xWins = false;
+let oWins = false;
 let endgame = false;
 
 const gameboard = [row1, row2, row3];
@@ -62,69 +64,85 @@ function loadBoard() {
 
     // Check for Win Conditions Horizontal
     if (row1[0] === 'X' && row1[1] === 'X' && row1[2] === 'X') {
-        console.log('X WIns');
+        endgame = true;
+        xWins = true;
     };
 
     if (row1[0] === 'O' && row1[1] === 'O' && row1[2] === 'O') {
-        console.log('O WIns');
+        endgame = true;
+        oWins = true;
     };
 
     if (row2[0] === 'X' && row2[1] === 'X' && row2[2] === 'X') {
-        console.log('X WIns');
+        endgame = true;
+        xWins = true;
     };
 
     if (row2[0] === 'O' && row2[1] === 'O' && row2[2] === 'O') {
-        console.log('O WIns');
+        endgame = true;
+        oWins = true;
     };
 
     if (row3[0] === 'X' && row3[1] === 'X' && row3[2] === 'X') {
-        console.log('X WIns');
+        endgame = true;
+        xWins = true;
     };
 
     if (row3[0] === 'O' && row3[1] === 'O' && row3[2] === 'O') {
-        console.log('O WIns');
+        endgame = true;
+        oWins = true;
     };
 
     // Check for Win Conditions Vertical
     if (row1[0] === 'X' && row2[0] === 'X' && row3[0] === 'X') {
-        console.log('X WIns');
+        endgame = true;
+        xWins = true;
     };
 
     if (row1[0] === 'O' && row2[0] === 'O' && row3[0] === 'O') {
-        console.log('O WIns');
+        endgame = true;
+        oWins = true;
     };
 
     if (row1[1] === 'X' && row2[1] === 'X' && row3[1] === 'X') {
-        console.log('X WIns');
+        endgame = true;
+        xWins = true;
     };
 
     if (row1[1] === 'O' && row2[1] === 'O' && row3[1] === 'O') {
-        console.log('O WIns');
+        endgame = true;
+        oWins = true;
     };
 
     if (row1[2] === 'X' && row2[2] === 'X' && row3[2] === 'X') {
-        console.log('X WIns');
+        endgame = true;
+        xWins = true;
     };
 
     if (row1[2] === 'O' && row2[2] === 'O' && row3[2] === 'O') {
-        console.log('O WIns');
+        endgame = true;
+        oWins = true;
     };
 
     // Check for Win Conditions Diagnol
     if (row1[0] === 'X' && row2[1] === 'X' && row3[2] === 'X') {
-        console.log('X WIns');
+        endgame = true;
+        xWins = true;
     };
 
     if (row1[0] === 'O' && row2[1] === 'O' && row3[2] === 'O') {
-        console.log('O WIns');
+        endgame = true;
+        oWins = true;
     };
 
     if (row1[2] === 'X' && row2[1] === 'X' && row3[0] === 'X') {
-        console.log('X WIns');
+        endgame = true;
+        xWins = true;
     };
 
     if (row1[2] === 'O' && row2[1] === 'O' && row3[0] === 'O') {
-        console.log('O WIns');
+        endgame = true;
+        oWins = true;
     };
 
     // Check for Draw
@@ -142,7 +160,13 @@ function loadBoard() {
 function endGame() {
     const headline = document.getElementById('headline');
     if (endgame) {
-        headline.innerText = `Game Over`;
+        if (xWins) {
+            headline.innerText = `X Wins!`;
+        } else if (oWins) {
+            headline.innerText = `O Wins!`;
+        } else {
+            headline.innerText = `Game Over`;
+        }
         setTimeout(function(){
             row1[0] = '';
             row1[1] = '';
@@ -154,9 +178,11 @@ function endGame() {
             row3[1] = '';
             row3[2] = '';
             loadBoard();
-        }, 1500);
+        }, 2000);
         endgame = false;
         xTurn = true;
+        xWins = false;
+        oWins = false;
     };
 };
 
