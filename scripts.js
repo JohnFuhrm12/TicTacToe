@@ -47,6 +47,8 @@ function loadBoard() {
         });
     };
 
+    // Change Headline
+
     const headline = document.getElementById('headline');
 
     if (xTurn) {
@@ -54,6 +56,78 @@ function loadBoard() {
     } else {
         headline.innerText = `Player 2's Turn`;
     };
+
+    // Check for Win Conditions Horizontal
+    if (row1[0] === 'X' && row1[1] === 'X' && row1[2] === 'X') {
+        console.log('X WIns');
+    };
+
+    if (row1[0] === 'O' && row1[1] === 'O' && row1[2] === 'O') {
+        console.log('O WIns');
+    };
+
+    if (row2[0] === 'X' && row2[1] === 'X' && row2[2] === 'X') {
+        console.log('X WIns');
+    };
+
+    if (row2[0] === 'O' && row2[1] === 'O' && row2[2] === 'O') {
+        console.log('O WIns');
+    };
+
+    if (row3[0] === 'X' && row3[1] === 'X' && row3[2] === 'X') {
+        console.log('X WIns');
+    };
+
+    if (row3[0] === 'O' && row3[1] === 'O' && row3[2] === 'O') {
+        console.log('O WIns');
+    };
+
+    // Check for Win Conditions Vertical
+    if (row1[0] === 'X' && row2[0] === 'X' && row3[0] === 'X') {
+        console.log('X WIns');
+    };
+
+    if (row1[0] === 'O' && row2[0] === 'O' && row3[0] === 'O') {
+        console.log('O WIns');
+    };
+
+    if (row1[1] === 'X' && row2[1] === 'X' && row3[1] === 'X') {
+        console.log('X WIns');
+    };
+
+    if (row1[1] === 'O' && row2[1] === 'O' && row3[1] === 'O') {
+        console.log('O WIns');
+    };
+
+    if (row1[2] === 'X' && row2[2] === 'X' && row3[2] === 'X') {
+        console.log('X WIns');
+    };
+
+    if (row1[2] === 'O' && row2[2] === 'O' && row3[2] === 'O') {
+        console.log('O WIns');
+    };
+
+    // Check for Win Conditions Diagnol
+    if (row1[0] === 'X' && row2[1] === 'X' && row3[2] === 'X') {
+        console.log('X WIns');
+    };
+
+    if (row1[0] === 'O' && row2[1] === 'O' && row3[2] === 'O') {
+        console.log('O WIns');
+    };
+
+    if (row1[2] === 'X' && row2[1] === 'X' && row3[0] === 'X') {
+        console.log('X WIns');
+    };
+
+    if (row1[2] === 'O' && row2[1] === 'O' && row3[0] === 'O') {
+        console.log('O WIns');
+    };
+
+    // Check for Draw
+    if (row1[0] !== '' && row1[1] !== '' && row1[2] !== '' && row2[0] !== '' && row2[1] !== '' && row2[2] !== '' && row3[0] !== '' && row3[1] !== '' && row3[2] !== '') {
+        console.log('Draw');
+    }
 
 };
 
@@ -174,13 +248,6 @@ window.onload = function() {
         if (row3[2] === '' && !xTurn) {
             row3[2] = 'O';
         };
-        loadBoard();
-    });
-
-    const testbtn = document.getElementById('test');
-
-    testbtn.addEventListener('click', function() {
-        console.log('hi');
         loadBoard();
     });
 };
